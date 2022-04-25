@@ -1,7 +1,7 @@
 const edFolha = [
   {
-  titulo: "PHP",
-  preco: 15
+    titulo: "PHP",
+    preco: 15
   },
   {
     titulo: "JavaScript",
