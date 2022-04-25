@@ -1,11 +1,15 @@
 const listaLivros = require('./array');
 
-function mergeSort(array) {
+function mergeSort(array, nivelAninhamento = 0) {
+
+    console.log(`Nível de animnhamento: ${nivelAninhamento}`);
+    console.log(array);
+
     if (array.length > 1) {
         // Math.floor: arredonda o numero para baixo
         const meio = Math.floor(array.length / 2);
-        const parte1 = mergeSort(array.slice(0, meio));
-        const parte2 = mergeSort(array.slice(meio, array.length));
+        const parte1 = mergeSort(array.slice(0, meio), nivelAninhamento++);
+        const parte2 = mergeSort(array.slice(meio, array.length), nivelAninhamento + 1);
         array = ordena(parte1, parte2);
     }
 
